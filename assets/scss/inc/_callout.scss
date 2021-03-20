@@ -1,0 +1,20 @@
+.callout {
+  background-color: $yellow;
+  color: $darkgray;
+  padding: 10px 15px;
+  margin-top: 80px;
+  height: 100px;
+  width: 100%;
+  text-align: left;
+}
+
+    .page-id-55, .page-id-9, .page-id-14 {
+      // prepare <main> element positioning
+        main {
+          position: relative;
+        }
+      // remove footer top-margin
+        .footer__inner {
+          margin-top: 0;
+        }
+    }

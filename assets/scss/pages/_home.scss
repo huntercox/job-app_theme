@@ -1,0 +1,53 @@
+.home {
+
+// Hero Image
+  &__hero {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 180px;
+    position: relative;
+
+    @media (min-width: $breakpoint-tablet) {
+      height: 360px;
+    }
+  }//.home__hero
+
+  // Overlay
+    .hero__overlay {
+      background-color: rgba($white, 0.75);
+      border: 1px solid $white;
+      border-bottom: 0;
+      width: 60%;
+      position: absolute;
+      bottom: 0;
+      right: 5%;
+      z-index: 2;
+
+      &-content {
+        padding: 6px;
+        font-size: 13px;
+      }
+      &-callout {
+        background-color: $blue;
+        color: $white;
+        padding: 2px 6px;
+        margin: 6px;
+        margin-top: 0;
+        float: right;
+
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+    }
+
+
+  article {
+    margin: 15px auto;
+    text-align: center;
+  }
+
+  &__callout-section {
+    margin: 30px 15px 0 15px;
+  }
+}

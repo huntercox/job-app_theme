@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Russo+One&display=swap');
+
+$headingfont: 'Russo One', sans-serif;
+$bodyfont: 'Open Sans', sans-serif;
+
+body {
+  color: $darkblue;
+  font-family: $bodyfont;
+  letter-spacing: 0.5px;
+}
+
+
+// Headings
+h2,h3,h4,h5,h6 {
+  font-family: $headingfont;
+  font-weight: bold;
+}
+
+// Paragraphs
+p {
+  line-height: 1.15;
+}
+
+// Links
+a {
+  font-family: $headingfont;
+  text-decoration: none;
+  color: $darkblue;
+  transition: color linear 100ms;
+
+  &:hover {
+    color: $blue;
+  }
+  &:visited {
+    color: $darkblue;
+  }
+}
+
+// Pages
+.page {
+  &__title {
+    color: $blue;
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 0px;
+    border-bottom: 1px solid $darkblue;
+    margin: 10px 0 20px 0;
+  }//.page__title
+
+  &__subheading {
+    background-color: $lightblue;
+    color: $white;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    letter-spacing: 0.5px;
+    font-size: 14px;
+  }//.page__content
+}

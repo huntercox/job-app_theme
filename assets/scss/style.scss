@@ -1,0 +1,36 @@
+@import 'variables';
+
+
+/**
+ * Node Modules
+ */
+
+  // MiniReset.CSS
+  @import '../../node_modules/minireset.css/minireset.sass';
+
+  // Font Awesome
+  @import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+  @import '../../node_modules/@fortawesome/fontawesome-free/scss/solid';
+  @import '../../node_modules/@fortawesome/fontawesome-free/scss/brands';
+
+  // Hamburger Menu
+  @import '../../node_modules/hamburgers/_sass/hamburgers/hamburgers';
+
+
+/**
+ * Local SCSS files
+ */
+
+  @import 'typography';
+  @import 'layout';
+
+  // Includes
+    @import 'inc/header';
+    @import 'inc/footer';
+    @import 'inc/callout';
+
+
+  //Pages
+    @import 'pages/home';
+    @import 'pages/otr';
+    @import 'pages/careers';
