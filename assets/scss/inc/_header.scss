@@ -1,7 +1,6 @@
 .header {
   background-color: $lightblue;
   position: relative;
-  z-index: 99;
 
   &__inner {
     margin: 0 10px;
@@ -38,7 +37,7 @@
 #navMenu {
   display: none;
   position: absolute;
-  z-index: 98;
+  z-index: 2;
   left: auto;
   right: 0;
   top: 100%;
@@ -69,9 +68,46 @@
         transition: color ease 100ms;
 
         &:hover {
-          color: $white;
+          color: $yellow;
         }
       }
     }
   }
 }
+
+
+// Sticky Header
+  .header--sticky {
+    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    background-color: $yellow;
+    transition: transform 100ms ease;
+    transform: translateY(-50px);
+
+
+    &.show {
+      display: block;
+      transform: translateY(0px);
+    }
+
+    #logo {
+      margin-bottom: 4px;
+    }
+
+    // Callout Button
+    .button {
+      background-color: $darkblue;
+      color: $white;
+      line-height: 32px;
+      padding: 0 8px;
+      transition: background-color 100ms ease;
+
+      &:hover {
+        background-color: rgba($darkblue, 0.9);
+      }
+    }
+
+  }

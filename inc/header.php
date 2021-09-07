@@ -14,6 +14,28 @@
 	</head>
 
 	<body <?php body_class(); ?>>
+
+	<!-- Sticky Header -->
+		<div class="header--sticky">
+			<div class="header__inner">
+				<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
+
+				<?php
+					if ( get_field('callout_link', 'option') ) :
+						$link = get_field('callout_link', 'option');
+						$link_url = $link['url'];
+						$link_title = $link['title'];
+				?>
+    			<a class="button" href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html( $link_title ); ?></a>
+  			<?php
+					endif;
+				?>
+
+				<!-- <div id="showScroll"></div> -->
+			</div>
+		</div><!-- /.header--sticky -->
+
+
 	<!-- START: Grid-Layout -->
 		<div class="grid-container">
 

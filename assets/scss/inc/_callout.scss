@@ -2,19 +2,32 @@
   background-color: $yellow;
   color: $darkgray;
   padding: 10px 15px;
-  margin-top: 80px;
-  height: 100px;
+  margin-top: 40px;
+  height: auto;
   width: 100%;
   text-align: left;
-}
 
-    .page-id-55, .page-id-9, .page-id-14 {
-      // prepare <main> element positioning
-        main {
-          position: relative;
-        }
-      // remove footer top-margin
-        .footer__inner {
-          margin-top: 0;
-        }
-    }
+  .button {
+    background-color: $darkblue;
+    color: $white;
+    padding: 6px 10px;
+    margin-top: 4px;
+    display: inline-block;
+  }
+}
+    // All pages callout is displayed
+      .page-id-55, .page-id-9, .page-id-14 {
+        // prepare <main> element positioning
+          main {
+            position: relative;
+          }
+        // remove footer top-margin
+          .footer__inner {
+            margin-top: 0;
+          }
+      }
+
+    // Front page / Home
+      .home__callout-section {
+        padding-top: 20px;
+      }

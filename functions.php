@@ -23,11 +23,31 @@
         wp_enqueue_script(
           'otr-types',
           get_template_directory_uri() . '/assets/js/otr-types.js',
-          array(),
+          array('jquery'),
           '1.0.0',
           false
         );
       }
+
+      // Apply
+      if ( is_page(43) ) {
+        wp_enqueue_script(
+          'inputmask',
+          get_template_directory_uri() . '/node_modules/inputmask/dist/jquery.inputmask.js',
+          array('jquery'),
+          '1.0.0',
+          false
+        );
+        wp_enqueue_script(
+          'job-app',
+          get_template_directory_uri() . '/assets/js/apply.js',
+          array('jquery'),
+          '1.0.0',
+          false
+        );
+      }
+
+
   }
   add_action( 'wp_enqueue_scripts', 'tli_register_assets' );
 
@@ -66,3 +86,21 @@ if( function_exists('acf_add_options_page') ) {
 	));
 
 }
+
+
+
+// Applicant Info (field group)
+  // Career (field)
+    add_filter('acf/load_field/key=field_604a4f2776fca', 'acf_read_only');
+  // Full Name (field)
+    add_filter('acf/load_field/key=field_604a4f2776fcb', 'acf_read_only');
+  // Phone Number (field)
+    add_filter('acf/load_field/key=field_604a4f3476fcc', 'acf_read_only');
+  // Relevant Experience (field)
+    add_filter('acf/load_field/key=field_604a4f3476fcd', 'acf_read_only');
+
+  // make ACF field read-only (not editable) on Job posts
+  function acf_read_only($field) {
+    $field['readonly'] = 1;
+    return $field;
+  }

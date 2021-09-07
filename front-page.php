@@ -41,13 +41,6 @@
       </article>
     <?php endwhile; endif; ?>
 
-  <!-- Callout section -->
-    <?php if ( get_field('home_callout_description') ) : ?>
-      <div class="home__callout-section">
-        <?php echo get_field('home_callout_description'); ?>
-      </div><!-- /.home__callout-section -->
-    <?php endif; ?>
-
 </main>
 
 <?php get_template_part('inc/footer'); ?>

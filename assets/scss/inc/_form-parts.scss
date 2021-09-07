@@ -1,0 +1,296 @@
+// Applicant Info
+
+.field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+
+  @media (min-width: $breakpoint-tablet ) {
+    margin-right: 8px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+  input {
+    font-size: 14px;
+    line-height: 26px;
+    height: 30px;
+    text-indent: 4px;
+
+    @media (min-width: $breakpoint-tablet ) {
+      font-size: 16px;
+    }
+  }
+
+}//.field
+
+.field-group {
+
+  .fg-row {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $breakpoint-tablet) {
+      flex-direction: row;
+    }
+  }
+}//.field-group
+
+/*
+------------------------------
+Applicant Info
+------------------------------
+*/
+    .field--dob {
+      input {
+        width: 100%;
+      }
+
+      @media (min-width: $breakpoint-tablet) {
+        width: auto;
+      }
+    }
+    .field--phone {
+
+      @media (min-width: $breakpoint-tablet) {
+        width: 160px;
+      }
+    }
+    .field--email {
+      width: 100%;
+    }
+    .field--workdate {
+      input {
+        width: 100%;
+      }
+
+      @media (min-width: $breakpoint-tablet) {
+        width: auto;
+      }
+    }
+    .field--position {
+      @media (min-width: $breakpoint-tablet) {
+        width: 30%;
+      }
+    }
+    .field--legal {
+      input[type=radio] {
+        margin-top: 10px;
+        text-align: right;
+
+        &:first-child {
+          margin-left: 15px;
+        }
+      }
+      label {
+        margin-left: 5px;
+        margin-right: 20px;
+      }
+    }
+
+
+/*
+------------------------------
+Residency
+------------------------------
+*/
+.field-group[class*="residency"] .fg-row:nth-child(1) {
+  flex-flow: row;
+}
+.field-group[class*="residency"] .fg-row:nth-child(2) {
+  flex-flow: row wrap;
+}
+
+
+  // Street Address
+  .field--street {
+      width: 100%;
+
+    @media (min-width: $breakpoint-tablet) {
+      flex: 3;
+    }
+  }
+  // City
+  .field--city {
+    width: 100%;
+
+    @media (min-width: $breakpoint-tablet) {
+      flex: 2;
+    }
+  }
+  // State
+  .field--state {
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 48px;
+    }
+  }
+  // Zipcode
+  .field--zipcode {
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 66px;
+    }
+  }
+  .field--duration {
+    flex: 1 0;
+  }
+
+
+
+/*
+------------------------------
+License Information
+------------------------------
+*/
+.field-group[class*="license"] {
+
+  .fg-row {
+    flex-flow: row;
+  }
+}
+
+
+/*
+------------------------------
+Driving Experience
+------------------------------
+*/
+.field-group[class*="driving"] {
+  display: flex;
+  flex-direction: row;
+
+  .fg-row {
+    flex: 1;
+  }
+  .fg-row:nth-child(2) {
+    flex-flow: column;
+  }
+}
+
+
+
+.field--equipment {
+  textarea {
+    height: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+
+/*
+------------------------------
+Accidents
+------------------------------
+*/
+.field-group[class*="accident"] {
+  display: flex;
+  flex-direction: row;
+
+  .fg-row {
+    flex-direction: column;
+
+    &:nth-child(1) {
+      flex: 3;
+    }
+    &:nth-child(2) {
+      flex: 2;
+    }
+  }
+  .field--chemicals {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .alt-label {
+      margin-bottom: 5px;
+    }
+
+    input {
+      margin-left: 15px;
+      height: 19px;
+    }
+    .inner-label {
+      margin-left: 8px;
+    }
+  }
+}
+
+/*
+------------------------------
+Traffic Convictions (Legal)
+------------------------------
+*/
+.field-group[class*="conviction"] {
+  display: flex;
+  flex-direction: row;
+
+  .fg-row {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+
+    &:nth-child(1) {
+      display: flex;
+      flex: 2;
+      flex-flow: row wrap;
+      align-items: flex-start;
+    }
+    &:nth-child(2) {
+      flex: 3;
+    }
+  }
+
+  .field--date-convicted {
+    width: auto;
+  }
+}
+
+.field-group.denied-suspended {
+  .fg-row {
+    flex-direction: column;
+
+    .field {
+      flex-direction: row;
+
+      .inner-label {
+        line-height: 26px;
+        margin-left: 5px;
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+
+/*
+------------------------------
+Employment History
+------------------------------
+*/
+.field-group[class*="employer"] {
+  .field--current-employer {
+    // row
+    &-name {
+      flex: 3;
+    }
+    &-address {
+      flex: 3;
+    }
+    // row
+    &-phone {
+      flex: 1;
+    }
+    &-position {
+      flex: 2;
+    }
+    &-salary {
+      flex: 2;
+    }
+    // row
+
+  }
+}

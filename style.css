@@ -3,7 +3,9 @@
 /* Font Awesome Webfonts */
 /* Media Queries */
 /**
+ * ===================================================
  * Node Modules
+ * ===================================================
  */
 /*! minireset.css v0.0.7 | MIT License | github.com/jgthms/minireset.css */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Russo+One&display=swap");
@@ -5380,7 +5382,9 @@ readers do not read off random characters that represent icons */
     transform: rotate(-90deg); }
 
 /**
+ * ===================================================
  * Local SCSS files
+ * ===================================================
  */
 body {
   color: #092a52;
@@ -5434,6 +5438,23 @@ html, body {
   grid-template-columns: 100%;
   grid-template-rows: auto 1fr auto; }
 
+.inner {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto; }
+  @media (min-width: 576px) {
+    .inner {
+      max-width: 576px; } }
+  @media (min-width: 768px) {
+    .inner {
+      max-width: 768px; } }
+  @media (min-width: 992px) {
+    .inner {
+      max-width: 992px; } }
+  @media (min-width: 1200px) {
+    .inner {
+      max-width: 1200px; } }
+
 header {
   grid-column: 1 / span 5; }
 
@@ -5449,8 +5470,7 @@ footer {
 
 .header {
   background-color: #6990bf;
-  position: relative;
-  z-index: 99; }
+  position: relative; }
   .header__inner {
     margin: 0 10px;
     display: flex;
@@ -5475,7 +5495,7 @@ footer {
 #navMenu {
   display: none;
   position: absolute;
-  z-index: 98;
+  z-index: 2;
   left: auto;
   right: 0;
   top: 100%;
@@ -5495,7 +5515,30 @@ footer {
       color: white;
       transition: color ease 100ms; }
       #navMenu .menu li a:hover {
-        color: white; }
+        color: #dec400; }
+
+.header--sticky {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  background-color: #dec400;
+  transition: transform 100ms ease;
+  transform: translateY(-50px); }
+  .header--sticky.show {
+    display: block;
+    transform: translateY(0px); }
+  .header--sticky #logo {
+    margin-bottom: 4px; }
+  .header--sticky .button {
+    background-color: #092a52;
+    color: white;
+    line-height: 32px;
+    padding: 0 8px;
+    transition: background-color 100ms ease; }
+    .header--sticky .button:hover {
+      background-color: rgba(9, 42, 82, 0.9); }
 
 .footer__inner {
   background-color: #6990bf;
@@ -5517,10 +5560,16 @@ footer {
   background-color: #dec400;
   color: #464646;
   padding: 10px 15px;
-  margin-top: 80px;
-  height: 100px;
+  margin-top: 40px;
+  height: auto;
   width: 100%;
   text-align: left; }
+  .callout .button {
+    background-color: #092a52;
+    color: white;
+    padding: 6px 10px;
+    margin-top: 4px;
+    display: inline-block; }
 
 .page-id-55 main, .page-id-9 main, .page-id-14 main {
   position: relative; }
@@ -5528,18 +5577,224 @@ footer {
 .page-id-55 .footer__inner, .page-id-9 .footer__inner, .page-id-14 .footer__inner {
   margin-top: 0; }
 
+.home__callout-section {
+  padding-top: 20px; }
+
+.field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px; }
+  @media (min-width: 768px) {
+    .field {
+      margin-right: 8px; } }
+  .field label {
+    font-size: 14px; }
+  .field input {
+    font-size: 14px;
+    line-height: 26px;
+    height: 30px;
+    text-indent: 4px; }
+    @media (min-width: 768px) {
+      .field input {
+        font-size: 16px; } }
+
+.field-group .fg-row {
+  display: flex;
+  flex-direction: column; }
+  @media (min-width: 768px) {
+    .field-group .fg-row {
+      flex-direction: row; } }
+
+/*
+------------------------------
+Applicant Info
+------------------------------
+*/
+.field--dob input {
+  width: 100%; }
+
+@media (min-width: 768px) {
+  .field--dob {
+    width: auto; } }
+
+@media (min-width: 768px) {
+  .field--phone {
+    width: 160px; } }
+
+.field--email {
+  width: 100%; }
+
+.field--workdate input {
+  width: 100%; }
+
+@media (min-width: 768px) {
+  .field--workdate {
+    width: auto; } }
+
+@media (min-width: 768px) {
+  .field--position {
+    width: 30%; } }
+
+.field--legal input[type=radio] {
+  margin-top: 10px;
+  text-align: right; }
+  .field--legal input[type=radio]:first-child {
+    margin-left: 15px; }
+
+.field--legal label {
+  margin-left: 5px;
+  margin-right: 20px; }
+
+/*
+------------------------------
+Residency
+------------------------------
+*/
+.field-group[class*="residency"] .fg-row:nth-child(1) {
+  flex-flow: row; }
+
+.field-group[class*="residency"] .fg-row:nth-child(2) {
+  flex-flow: row wrap; }
+
+.field--street {
+  width: 100%; }
+  @media (min-width: 768px) {
+    .field--street {
+      flex: 3; } }
+
+.field--city {
+  width: 100%; }
+  @media (min-width: 768px) {
+    .field--city {
+      flex: 2; } }
+
+@media (min-width: 768px) {
+  .field--state {
+    width: 48px; } }
+
+@media (min-width: 768px) {
+  .field--zipcode {
+    width: 66px; } }
+
+.field--duration {
+  flex: 1 0; }
+
+/*
+------------------------------
+License Information
+------------------------------
+*/
+.field-group[class*="license"] .fg-row {
+  flex-flow: row; }
+
+/*
+------------------------------
+Driving Experience
+------------------------------
+*/
+.field-group[class*="driving"] {
+  display: flex;
+  flex-direction: row; }
+  .field-group[class*="driving"] .fg-row {
+    flex: 1; }
+  .field-group[class*="driving"] .fg-row:nth-child(2) {
+    flex-flow: column; }
+
+.field--equipment textarea {
+  height: 100%;
+  padding: 10px;
+  font-size: 16px; }
+
+/*
+------------------------------
+Accidents
+------------------------------
+*/
+.field-group[class*="accident"] {
+  display: flex;
+  flex-direction: row; }
+  .field-group[class*="accident"] .fg-row {
+    flex-direction: column; }
+    .field-group[class*="accident"] .fg-row:nth-child(1) {
+      flex: 3; }
+    .field-group[class*="accident"] .fg-row:nth-child(2) {
+      flex: 2; }
+  .field-group[class*="accident"] .field--chemicals {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .field-group[class*="accident"] .field--chemicals .alt-label {
+      margin-bottom: 5px; }
+    .field-group[class*="accident"] .field--chemicals input {
+      margin-left: 15px;
+      height: 19px; }
+    .field-group[class*="accident"] .field--chemicals .inner-label {
+      margin-left: 8px; }
+
+/*
+------------------------------
+Traffic Convictions (Legal)
+------------------------------
+*/
+.field-group[class*="conviction"] {
+  display: flex;
+  flex-direction: row; }
+  .field-group[class*="conviction"] .fg-row {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px; }
+    .field-group[class*="conviction"] .fg-row:nth-child(1) {
+      display: flex;
+      flex: 2;
+      flex-flow: row wrap;
+      align-items: flex-start; }
+    .field-group[class*="conviction"] .fg-row:nth-child(2) {
+      flex: 3; }
+  .field-group[class*="conviction"] .field--date-convicted {
+    width: auto; }
+
+.field-group.denied-suspended .fg-row {
+  flex-direction: column; }
+  .field-group.denied-suspended .fg-row .field {
+    flex-direction: row; }
+    .field-group.denied-suspended .fg-row .field .inner-label {
+      line-height: 26px;
+      margin-left: 5px;
+      margin-right: 15px; }
+
+/*
+------------------------------
+Employment History
+------------------------------
+*/
+.field-group[class*="employer"] .field--current-employer-name {
+  flex: 3; }
+
+.field-group[class*="employer"] .field--current-employer-address {
+  flex: 3; }
+
+.field-group[class*="employer"] .field--current-employer-phone {
+  flex: 1; }
+
+.field-group[class*="employer"] .field--current-employer-position {
+  flex: 2; }
+
+.field-group[class*="employer"] .field--current-employer-salary {
+  flex: 2; }
+
 .home__hero {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 180px;
+  height: 360px;
   position: relative; }
   @media (min-width: 768px) {
     .home__hero {
-      height: 360px; } }
+      height: 400px; } }
 
 .home .hero__overlay {
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid white;
   border-bottom: 0;
   width: 60%;
@@ -5550,6 +5805,13 @@ footer {
   .home .hero__overlay-content {
     padding: 6px;
     font-size: 13px; }
+    .home .hero__overlay-content strong, .home .hero__overlay-content h1, .home .hero__overlay-content h2, .home .hero__overlay-content h3, .home .hero__overlay-content h4, .home .hero__overlay-content h5, .home .hero__overlay-content h6 {
+      font-size: 20px;
+      line-height: 1.5; }
+    @media (min-width: 768px) {
+      .home .hero__overlay-content {
+        padding: 20px;
+        font-size: 16px; } }
   .home .hero__overlay-callout {
     background-color: #2c4b71;
     color: white;
@@ -5559,13 +5821,17 @@ footer {
     float: right;
     font-size: 12px;
     text-transform: uppercase; }
+    @media (min-width: 768px) {
+      .home .hero__overlay-callout {
+        font-size: 16px;
+        padding: 6px 10px; } }
 
 .home article {
   margin: 15px auto;
   text-align: center; }
-
-.home__callout-section {
-  margin: 30px 15px 0 15px; }
+  .home article .inner-content {
+    max-width: 80%;
+    margin: 0 auto; }
 
 .why-otr {
   background-color: #6990bf;
@@ -5628,3 +5894,41 @@ footer {
     font-size: 15px; }
   .career__content {
     font-size: 14px; }
+
+#job-app {
+  width: 100%;
+  padding: 20px 15px 0 15px;
+  background-color: #e6e6e6; }
+  #job-app h2 {
+    margin: 30px 0 15px 0;
+    font-size: 24px; }
+    #job-app h2:first-child {
+      margin-top: 0; }
+  #job-app h3 {
+    color: #464646;
+    font-size: 18px;
+    margin-top: 10px; }
+  #job-app .alt-label, #job-app label {
+    display: block;
+    font-size: 14px; }
+  #job-app .alt-label {
+    font-weight: bold; }
+  #job-app .inner-label {
+    display: inline-block; }
+  #job-app hr {
+    margin: 10px 0; }
+
+.error {
+  background-color: #e60000;
+  font-size: 18px;
+  font-style: bold;
+  text-transform: uppercase;
+  padding: 10px 20px; }
+
+.page-id-43 .inner {
+  width: 100%;
+  max-width: none; }
+  @media (min-width: 768px) {
+    .page-id-43 .inner {
+      width: auto;
+      margin: 10px 15px 0 15px; } }
